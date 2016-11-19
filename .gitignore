@@ -1,0 +1,5 @@
+node_modules/
+build/
+.sass-cache/
+/.project
+.idea/

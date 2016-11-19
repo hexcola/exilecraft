@@ -1,0 +1,21 @@
+<div [style.width.px]="windowSize.Width" [style.height.px]="windowSize.Height" class="workspace">
+	<div *ngIf="skillTree != null" class="workspace-content">
+		<div class="action-bar-window">
+			<poe-action-bar [skill-tree]="skillTree" [points-spent]="skillTree.SpentPoints" [ascendancy-points-spent]="skillTree.SpentAscendancyPoints"
+				[selected-class]="skillTree.SelectedClass.BaseClassId" [selected-sub-class]="skillTree.SelectedSubClass.Id" (selected-class-changed)="OnSelectedClassChanged($event)"
+				(selected-sub-class-changed)="OnSelectedSubClassChanged($event)" (import-build)="OnImportBuild($event)" (reset-build)="OnBuildReset()"
+				(searched-nodes)="OnSearch($event)"></poe-action-bar>
+		</div>
+		<div class="toggle-details-bar" [class.hide]="!buildSummaryHidden" [class.show]="buildSummaryHidden" (click)="OnToggleBuildSummary()"></div>
+		<div class="details-bar" [class.hidden]="buildSummaryHidden">
+			<div class="build-summary-container">
+				<poe-build-summary [skill-tree]="skillTree" (visibilityChanged)="hideBuildSummary=$event"></poe-build-summary>
+			</div>
+		</div>
+		<div class="skill-tree-window" #skillTreeWindow [class.expanded]="buildSummaryHidden">
+			<poe-tree-view [skill-tree]="skillTree" [width]="skillTreeWindow.getBoundingClientRect().width" [height]="skillTreeWindow.getBoundingClientRect().height"
+				(nodetoggle)="OnBuildChanged()" (nodehover)="nodeDetailsComponent.NodeHoverChanged($event)"></poe-tree-view>
+		</div>
+		<poe-node-details #nodeDetailsComponent [skill-tree]="skillTree"></poe-node-details>
+	</div>
+</div>

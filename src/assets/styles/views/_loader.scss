@@ -1,0 +1,34 @@
+.loader-view
+{
+	background-color: black;
+	border: 1px solid white;
+	color: white;
+	display: inline-block;
+	vertical-align: middle;
+
+	.title
+	{
+		padding: 10px 50px 10px 50px;
+		font-size: 16px;
+		border-bottom: 1px solid white;
+	}
+
+	.action
+	{
+		font-size: 12px;
+		padding: 5px;
+	}
+
+	.progress-bar
+	{
+		text-align: left;
+		background-color: darkgrey;
+		width: 100%;
+
+		.percent-complete-bar
+		{
+			height: 100%;
+			background-color: green;
+		}
+	}
+}

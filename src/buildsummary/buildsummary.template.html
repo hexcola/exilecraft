@@ -1,0 +1,8 @@
+<div class="build-summary">
+	<div class="category" *ngFor="let category of categories">
+		<div class="category-name">{{category.name}}</div>
+		<div class="category-items">
+			<div class="category-item" *ngFor="let item of category.items">{{item}}</div>
+		</div>
+	</div>
+</div>

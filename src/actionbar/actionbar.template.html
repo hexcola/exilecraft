@@ -1,0 +1,27 @@
+<div class="action-bar">
+	<a class="application-title link action-item" href="http://exilecraft.org">ExileCraft - Passive Tree Planner</a>
+	<a class="link action-item" href="https://gitlab.com/jmis/exilecraft" target="_blank">[View on GitLab]</a>
+	<div class="build-class action-item">
+		<label>Class</label>
+		<select #classNameInput [ngModel]="selectedClass" (change)="selectedClassChanged.emit(classNameInput.value)">
+			<option *ngFor="let c of Classes" value="{{c.BaseClassId}}">{{c.BaseClassName}}</option>
+		</select>
+	</div>
+	<div class="build-sub-class action-item">
+		<select #subClassNameInput [ngModel]="selectedSubClass" (change)="selectedSubClassChanged.emit(subClassNameInput.value)">
+			<option *ngFor="let subclass of CurrentlyAvailableSubClass" value="{{subclass.Id}}">{{subclass.DisplayName}}</option>
+		</select>
+	</div>
+	<div class="points action-item">
+		<div class="skill-points">{{pointsSpent}} / 123 - {{ascendancyPointsSpent}} / 8</div>
+		<input type="button" value="Reset" (click)="resetBuild.next(null)" />
+	</div>
+	<div class="import action-item">
+		<input type="text" placeholder="{{loadFailed ? 'Failed' : 'Passive Tree URL'}}" [(ngModel)]="importBuildUrl" />
+		<input type="button" value="Import" (click)="ImportBuild()" (focus)="loadFailed = false" />
+	</div>
+	<div class="search action-item">
+		<input #searchInput type="text" (keyup)="searchedNodes.next(searchInput.value)" placeholder="Search" />
+	</div>
+	<div class="action-item version">Path of Exile Version: 2.4.0</div>
+</div>

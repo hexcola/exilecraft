@@ -1,0 +1,53 @@
+.action-bar
+{
+	@include box-sizing(border-box);
+	color: white;
+	height: 100%;
+	white-space: nowrap;
+
+	&:before
+	{
+		content: "";
+		display: inline-block;
+		height: 100%;
+		width: 0;
+		vertical-align: middle;
+	}
+
+	.import, .build-class, .points, .search, .application-title, .build-sub-class, .version
+	{
+		display: inline-block;
+		overflow: hidden;
+		vertical-align: middle;
+		@include box-sizing(border-box);
+	}
+
+	.action-item + .action-item { margin-left: 15px; }
+	.action-item:first-of-type { margin-left: 10px; }
+	.action-item:last-of-type { margin-right: 10px; }
+
+	.build-class label
+	{
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+
+	.points .skill-points
+	{
+		display: inline-block;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+
+	.search input { width: 200px; }
+
+	.link
+	{
+		text-decoration: none;
+		color: white;
+		vertical-align: middle;
+		font-size: 12px;
+		&:visited { color: white; }
+		&:hover { color: #555; }
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"sourceMap": false,
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+		"baseUrl": "src"
+	},
+	"filesGlob": [
+		"**/*.ts",
+		"!node_modules/**/*"
+	],
+	"compileOnSave": false,
+	"buildOnSave": false
+}
